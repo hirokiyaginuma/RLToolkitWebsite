@@ -12,11 +12,11 @@ See https://github.com/BlakeERichey/RLToolkit for details about RLToolkit
 * Setup database - 25% complete
 * Create django model - 25% complete
 * Setup Users - done
-* Deploy website with Apache -done
-* Setup URL
-* Create Django view
-* Add dynamic datas and static datas
-* Create html files
+* Deploy website with Apache - done
+* Setup URL - on progress
+* Create Django view - on progress
+* Add dynamic datas and static datas - on progress
+* Create html files - on progress
 * Expand Templates
 * Expand Applications
 * Add django form
