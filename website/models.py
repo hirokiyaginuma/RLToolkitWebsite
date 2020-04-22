@@ -3,6 +3,28 @@ from django.db import models
 from django.utils import timezone
 
 
+class Installing(models.Model):
+    title = models.CharField(max_length=200)
+    text = models.TextField()
+    order = models.BigIntegerField()
+
+    def publish(self):
+        self.save()
+
+    def __str__(self):
+        return self.title
+        
+class Tutorials(models.Model):
+    title = models.CharField(max_length=200)
+    text = models.TextField()
+    order = models.BigIntegerField()
+
+    def publish(self):
+        self.save()
+
+    def __str__(self):
+        return self.title
+
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
