@@ -2,12 +2,13 @@
 
 {% block title %}RLToolkit - Reinforcement learning library for Python{% endblock %}
 
-{% block head %}RLToolkit - Reinforcement learning library for Python{% endblock %}
+{% block head %}RLToolkit - Tutorials{% endblock %}
 
 {% block content %}
       {% for article in articles %}
-          <div class="article">
-              {{ article.content|safe }}
-          </div>
+              <div class="article">
+                  <h2>{{ article.title }}</h2>
+                  {{ article.content|safe }}
+              </div>
       {% endfor %} 
 {% endblock %}
