@@ -5,8 +5,9 @@
 {% block head %}RLToolkit - Contact{% endblock %}
 
 {% block content %}
-        <div class="home">
-            <h2>Contact Information</h2>
-            <p>Contact<br></p>
-        </div>   
+      {% for article in articles %}
+          <div class="article">
+              {{ article.content|safe }}
+          </div>
+      {% endfor %} 
 {% endblock %}

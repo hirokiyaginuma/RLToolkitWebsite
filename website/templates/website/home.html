@@ -5,15 +5,9 @@
 {% block head %}RLToolkit - Reinforcement learning library for Python{% endblock %}
 
 {% block content %}
-        <div class="home">
-            <p>Reinforcement learning library for industry and personal use.<br>
-               Included Reinforcement learning methods:<br>
-               <ul>
-               <li>Deep Q Learning</li>
-               <li>A3C</li>
-               <li>Policy Gradient</li>
-               <li>COGA</li>
-               </ul>
-            </p>
-        </div>   
+      {% for article in articles %}
+          <div class="article">
+              {{ article.content|safe }}
+          </div>
+      {% endfor %} 
 {% endblock %}

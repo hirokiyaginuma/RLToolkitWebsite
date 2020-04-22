@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Post, Installing, Tutorials
+from .models import Main, Post, Installing, Tutorials
 
 
 def home(request):
-    return render(request, 'website/home.html', {})
+    articles = Main.objects.filter(menu='home').order_by('order')
+    return render(request, 'website/home.html', {'articles':articles})
     
 def installing(request):
     articles = Installing.objects.all().order_by('order')
@@ -15,7 +16,8 @@ def tutorials(request):
     return render(request, 'website/tutorials.html', {'articles':articles})
     
 def contact(request):
-    return render(request, 'website/contact.html', {})
+    articles = Main.objects.filter(menu='contact').order_by('order')
+    return render(request, 'website/contact.html', {'articles':articles})
     
 def test(request):
     #posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
