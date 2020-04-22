@@ -81,7 +81,9 @@
 }
 
 .boxed {
-  border: 1px solid green;
+  font-size: 18px;
+  border: 2px solid green;
+  font-family: Consolas,monaco,monospace; 
 }
 
 @media screen and (max-height: 450px) {
