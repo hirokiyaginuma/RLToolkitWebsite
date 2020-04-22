@@ -1,12 +1,14 @@
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Installing(models.Model):
     title = models.CharField(max_length=200)
-    text = models.TextField()
-    order = models.BigIntegerField()
+    text = models.TextField(default='Sample Text')
+    content = RichTextUploadingField(default='Sample Text')
+    order = models.BigIntegerField(default=0)
 
     def publish(self):
         self.save()
@@ -16,8 +18,9 @@ class Installing(models.Model):
         
 class Tutorials(models.Model):
     title = models.CharField(max_length=200)
-    text = models.TextField()
-    order = models.BigIntegerField()
+    text = models.TextField(default='Sample Text')
+    content = RichTextUploadingField(default='Sample Text')
+    order = models.BigIntegerField(default=0)
 
     def publish(self):
         self.save()
@@ -28,7 +31,8 @@ class Tutorials(models.Model):
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
-    text = models.TextField()
+    text = models.TextField(default='Sample Text')
+    content = RichTextUploadingField(default='Sample Text')
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 

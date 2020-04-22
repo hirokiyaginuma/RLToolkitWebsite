@@ -8,7 +8,7 @@
       {% for article in articles %}
               <div class="article">
                   <h2>{{ article.title }}</h2>
-                  <p>{{ article.text|linebreaksbr }}</p>
+                  {{ article.content|safe }}
               </div>
       {% endfor %} 
 {% endblock %}
