@@ -25,7 +25,7 @@ SECRET_KEY = ')=+nj4o&=k^gn-l1co!h2qj-&5ieyz5dxlmi9nn8n_3w*q(%6q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['45.32.205.137']
+ALLOWED_HOSTS = ['45.32.205.137','rltoolkit.me','www.rltoolkit.me']
 
 
 # Application definition
@@ -120,3 +120,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'website/static/'),)
