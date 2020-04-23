@@ -4,6 +4,11 @@ from django.utils import timezone
 from ckeditor_uploader.fields import RichTextUploadingField
 
 CHOICE = { ('home', 'Home'), ('contact', 'Contact')}
+GET_CHOICE = { ('env', 'Initialize environment'), 
+             ('method', 'Initialize method'), 
+             ('callback', 'Choose callbacks'), 
+             ('train', 'Train model'), 
+             ('result', 'Show results') }
 
 class Main(models.Model):
     menu = models.CharField(max_length=200, choices=CHOICE)
@@ -16,6 +21,19 @@ class Main(models.Model):
 
     def __str__(self):
         return self.title
+        
+class GetStarted(models.Model):
+    menu = models.CharField(max_length=200, choices=GET_CHOICE)
+    title = models.CharField(max_length=200)
+    content = RichTextUploadingField(default='Sample Text')
+    order = models.BigIntegerField(default=0)
+
+    def publish(self):
+        self.save()
+
+    def __str__(self):
+        return self.title
+
         
 class Installing(models.Model):
     title = models.CharField(max_length=200)

@@ -4,12 +4,23 @@
         <title>{% block title %}{% endblock %}</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="{% static 'css/website.css' %}">
     </head>
     <body>
         <div class="sidenav">
             <a href="/">Home</a>
             <a href="{% url 'installing' %}">Installing</a>
+            <button class="dropdown-btn">Get Started
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+            <a href="{% url 'get_started' %}">Initialize environment</a>
+            <a href="{% url 'get_started' %}/#method">Initialize method</a>
+            <a href="{% url 'get_started' %}/#callback">Choose callbacks</a>
+            <a href="{% url 'get_started' %}/#train">Train model</a>
+            <a href="{% url 'get_started' %}/#result">Show results</a>
+            </div>
             <a href="{% url 'usage' %}">Usage</a>
             <a href="{% url 'tutorials' %}">Tutorials</a>
             <a href="{% url 'contact' %}">Contact</a>
@@ -27,5 +38,24 @@
               </div>
           </div>
         </div>
+        
+        <script>
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+        
+        for (i = 0; i < dropdown.length; i++) {
+          dropdown[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var dropdownContent = this.nextElementSibling;
+          if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+          } else {
+          dropdownContent.style.display = "block";
+          }
+          });
+        }
+        </script>
+        
+        
     </body>
 </html>

@@ -1,11 +1,15 @@
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Main, Post, Installing, Usage, Tutorials
+from .models import Main, GetStarted, Post, Installing, Usage, Tutorials
 
 
 def home(request):
     articles = Main.objects.filter(menu__contains='home').order_by('order')
     return render(request, 'website/home.html', {'articles':articles})
+ 
+def get_started(request):
+    articles = GetStarted.objects.all().order_by('order')
+    return render(request, 'website/get-started.html', {'articles':articles})
     
 def installing(request):
     articles = Installing.objects.all().order_by('order')
