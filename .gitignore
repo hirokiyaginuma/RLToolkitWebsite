@@ -2,7 +2,7 @@
 *~
 /.vscode
 __pycache__
-webapp
+myvenv
 db.sqlite3
 /static
 /media
