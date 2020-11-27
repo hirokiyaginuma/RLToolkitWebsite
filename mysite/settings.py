@@ -25,7 +25,7 @@ SECRET_KEY = ')=+nj4o&=k^gn-l1co!h2qj-&5ieyz5dxlmi9nn8n_3w*q(%6q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['45.32.205.137','rltoolkit.me','www.rltoolkit.me']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
